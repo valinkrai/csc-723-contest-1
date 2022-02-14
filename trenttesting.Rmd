@@ -1,0 +1,54 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+train = read.csv("UNSW_NB15_training-set.csv")
+View(test)
+
+ls(train)
+```
+
+
+```{r}
+train$label[0:10]
+plot(as.factor(train$label), train$smeansz, main="smeansz") # interesting
+plot(as.factor(train$label), train$dmeansz, main="dmeansz") # interesting
+plot(as.factor(train$label), train$ct_dst_ltm, main="ct_dst_ltm")
+plot(as.factor(train$label), train$ct_dst_sport_ltm, main="ct_dst_sport_ltm")
+plot(as.factor(train$label), train$ct_dst_src_ltm, main="ct_dst_src_ltm")
+plot(as.factor(train$label), train$ct_flw_http_mthd, main="ct_flw_http_mthd")
+plot(as.factor(train$label), train$ct_ftp_cmd, main="ct_ftp_cmd")
+plot(as.factor(train$label), train$ct_src_dport_ltm, main="ct_src_dport_ltm")
+plot(as.factor(train$label), train$ct_src_ltm, main="ct_src_ltm")
+plot(as.factor(train$label), train$ct_srv_dst  , main="ct_srv_dst  ")
+plot(as.factor(train$label), train$ct_srv_src, main="ct_srv_src")
+plot(as.factor(train$label), train$ct_state_ttl, main="ct_state_ttl") # Interesting
+plot(as.factor(train$label), train$dbytes, main="dbytes") # Interesting
+plot(as.factor(train$label), train$sbytes, main="dbytes") # Interesting
+plot(as.factor(train$label), train$dur, main="dur")
+plot(as.factor(train$label), train$sloss, main="sloss") # interesting
+plot(as.factor(train$label), train$dloss, main="dloss") # interesting
+plot(as.factor(train$label), train$sttl, main="sttl")
+plot(as.factor(train$label), train$dttl, main="dttl")
+
+
+```
+
+
+```{r}
+test <- read.csv("UNSW_NB15_testing-set.csv")
+```
+
+
+
+```{r}
+table(train$label)
+```
+
+```{r}
+table(test$label)
+```
+
